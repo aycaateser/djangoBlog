@@ -18,4 +18,5 @@ class CommentModel(models.Model):
 
     def __str__ (self):
         return self.writer.username  #yorumu yazanın adı gorunsun diye
-        
+
+ 
