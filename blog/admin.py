@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import CategoryModel,ArticleModel
+from blog.models import (CategoryModel,ArticleModel,CommentModel)
 # Register your models here.
 admin.site.register(CategoryModel)
 
@@ -11,3 +11,11 @@ class ArticleAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(ArticleModel,ArticleAdmin) 
+
+class CommentAdmin(admin.ModelAdmin):
+    last_display=(
+        'writer','created_date','updated_date')
+    search_fields= ('writer_username',) #yazarın usernameine gore arama yap
+admin.site.register(CommentModel,CommentAdmin)
+
+ 
